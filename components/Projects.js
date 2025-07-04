@@ -4,13 +4,13 @@ import Link from 'next/link';
 const projects = [
 {
   title: 'Cloud POS and Inventory System',
-  image: '/images/projects/thumbnails/cloudpos_tumb.png',
+  image: '/images/projects/thumbnails/cloudpos_tumb.jpg',
   description: 'A robust and scalable cloud-based Point of Sale (POS) and inventory management system designed for businesses with multiple branches or clients. It supports real-time product updates, stock tracking, sales processing, and reporting. Ideal for retail and service businesses looking for a centralized and efficient way to manage operations from anywhere.',
   link: 'https://clpos.legendbyte.com',
 },
   {
     title: 'IoT Energy Metering System',
-    image: '/images/projects/thumbnails/energymeter_tumb.png',
+    image: '/images/projects/thumbnails/energymeter_tumb.jpg',
     description: 'An IoT-based system for real-time energy consumption tracking and dynamic cost calculation.',
     link: 'https://example.com/iot-energy-metering-system',
   },
@@ -22,7 +22,7 @@ const projects = [
   },
  {
   title: 'Helpdesk Support Management',
-  image: '/images/projects/thumbnails/helpdesk.png',
+  image: '/images/projects/thumbnails/helpdesk.jpg',
   description: 'This Helpdesk Support Management System is a webased software designed to help organizations efficiently handle customer or internal support requests. It includes key features like ticket creation and tracking, user management, issue categorization, priority handling, and detailed reporting to improve support response and service quality.',
   link: 'https://example.com/helpdesk-system',
 },
