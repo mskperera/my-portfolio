@@ -22,7 +22,7 @@ const projects = [
     { url: "https://clpos.legendbyte.com/api/v1/asset/353f43120cfc12618dc0fcaa87594ac3", caption: "Add/Edit Product Details" },
     { url: "https://clpos.legendbyte.com/api/v1/asset/0ee1ab3084bd567164cf16cb4415e955", caption: "Desktop App Icon" }
   ],
-  tech: ["React.js", "Node.js", "Express", "Tailwind CSS", "MariaDB", "Tauri", "WebSocket", "PWA"]
+  tech: ["React.js", "Node.js", "Express", "Tailwind CSS", "MariaDB", "Tauri", "Socket.io",]
 }
 ,
 
