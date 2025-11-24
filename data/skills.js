@@ -9,6 +9,7 @@ const skills = [
 
   { name: "React.js", icon: "https://cdn.worldvectorlogo.com/logos/react-2.svg" },
   { name: "React Native", icon: "https://cdn.worldvectorlogo.com/logos/react-2.svg" }, // Same logo as React, universally accepted
+      { name: "Next.js", icon: "https://cdn.worldvectorlogo.com/logos/next-3.svg" },
   { name: "Node.js", icon: "https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg" },
    { name: "WPF", icon: "https://cdn.worldvectorlogo.com/logos/c--4.svg" },
 
@@ -16,7 +17,8 @@ const skills = [
   { name: "MySQL", icon: "https://cdn.worldvectorlogo.com/logos/mysql-2.svg" },
   { name: "MariaDB", icon: "https://cdn.worldvectorlogo.com/logos/mariadb-filled-.svg" },
   { name: "MongoDB", icon: "https://cdn.worldvectorlogo.com/logos/mongodb-icon-1.svg" },
-  { name: "PostgreSQL", icon: "https://cdn.worldvectorlogo.com/logos/postgresql.svg" },
+
+  // { name: "PostgreSQL", icon: "https://cdn.worldvectorlogo.com/logos/postgresql.svg" },
 
   { name: "AWS", icon: "https://cdn.worldvectorlogo.com/logos/aws-2.svg" },
   { name: "Docker", icon: "https://cdn.worldvectorlogo.com/logos/docker-4.svg" },
