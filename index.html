@@ -78,13 +78,25 @@
   </nav>
 
   <!-- Mobile Fullscreen Menu -->
-  <div id="mobileMenu" class="fixed inset-0 bg-gray-900/95 z-40 hidden flex-col items-center justify-center space-y-10 text-3xl">
-    <button id="closeMobile" class="absolute top-8 right-8 text-5xl text-white">&times;</button>
-    <a href="#about" class="text-white hover:text-sky-400 transition">About</a>
-    <a href="#skills" class="text-white hover:text-sky-400 transition">Skills</a>
-    <a href="#projects" class="text-white hover:text-sky-400 transition">Projects</a>
-    <a href="#contact" class="text-white hover:text-sky-400 transition">Contact</a>
+<!-- Mobile Fullscreen Menu - FINAL FIXED VERSION -->
+<div id="mobileMenu" class="fixed inset-0 z-[9999] hidden">
+  <!-- Backdrop (covers EVERYTHING including navbar) -->
+  <div id="mobileBackdrop" class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+  
+  <!-- Actual Menu Content (centered, on top of backdrop) -->
+  <div class="relative z-10 flex flex-col items-center justify-center h-full pt-24 pb-10">
+    <button id="closeMobile" class="absolute top-7 right-7 text-6xl text-white hover:text-sky-400 transition transform hover:scale-110">
+      ×
+    </button>
+    
+    <nav class="flex flex-col items-center space-y-10 text-4xl font-medium">
+      <a href="#about" class="text-white hover:text-sky-400 transition">About</a>
+      <a href="#skills" class="text-white hover:text-sky-400 transition">Skills</a>
+      <a href="#projects" class="text-white hover:text-sky-400 transition">Projects</a>
+      <a href="#contact" class="text-white hover:text-sky-400 transition">Contact</a>
+    </nav>
   </div>
+</div>
 
 <!-- Hero -->
 <header class="pt-28 pb-20 text-white 
@@ -336,6 +348,39 @@
 
 
 
+<script>
+        // ==================== MOBILE MENU ====================
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const closeMobile = document.getElementById('closeMobile');
+
+  mobileMenuBtn.addEventListener('click', () => {
+    mobileMenu.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  });
+
+  closeMobile.addEventListener('click', () => {
+    mobileMenu.classList.add('hidden');
+    document.body.style.overflow = '';
+  });
+
+  // Close when clicking backdrop
+  mobileMenu.addEventListener('click', (e) => {
+    if (e.target.id === 'mobileBackdrop' || e.target === mobileMenu) {
+      mobileMenu.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+  });
+
+  // Close on link click
+  document.querySelectorAll('#mobileMenu a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      document.body.style.overflow = '';
+    });
+  });
+</script>
+
   <script>
     // ==================== DARK MODE – EXACTLY LIKE YOUR OLD WORKING ONE ====================
     const themeToggleMobile = document.getElementById("themeToggleMobile");
@@ -386,46 +431,55 @@
       toggleTheme(); // This will set dark mode + save it
     }
 
-    // ==================== MOBILE MENU ====================
-    const mobileMenu = document.getElementById('mobileMenu');
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const closeMobile = document.getElementById('closeMobile');
 
-    mobileMenuBtn.onclick = () => mobileMenu.classList.remove('hidden');
-    closeMobile.onclick = () => mobileMenu.classList.add('hidden');
-    mobileMenu.addEventListener('click', e => e.target === mobileMenu && mobileMenu.classList.add('hidden'));
+  
 
     // ==================== LOAD SKILLS & PROJECTS ====================
-    const skillsGrid = document.getElementById('skillsGrid');
-    skills.forEach(s => {
-      const div = document.createElement('div');
-      div.className = 'text-center group';
-      div.innerHTML = `
-        <img src="${s.icon}" alt="${s.name}" class="w-20 h-20 mx-auto mb-3 group-hover:scale-110 transition">
-        <p class="font-medium text-sm">${s.name}</p>
-      `;
-      skillsGrid.appendChild(div);
-    });
+   
 
-    const projectsGrid = document.getElementById('projectsGrid');
-    projects.forEach(p => {
-      const card = document.createElement('div');
-      card.className = 'project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden cursor-pointer';
-      card.onclick = () => location.href = `project.html?id=${p.slug}`;
-      card.innerHTML = `
-        <img src="${p.thumbnail}" alt="${p.title}" class="w-full h-56 object-cover">
-        <div class="p-6">
-          <h3 class="text-2xl font-bold mb-2">${p.title}</h3>
-          <p class="text-gray-600 dark:text-gray-400 mb-4">${p.short}</p>
-          <div class="flex flex-wrap gap-2">
-            ${p.tech.map(t => `<span class="px-4 py-1.5 text-xs rounded-full font-medium bg-sky-100 dark:bg-sky-900 text-sky-800 dark:text-sky-200">${t}</span>`).join('')}
-          </div>
+  const skillsGrid = document.getElementById('skillsGrid');
+  skills.forEach(s => {
+    const div = document.createElement('div');
+    div.className = 'text-center group';
+    div.innerHTML = `
+      <img src="${s.icon}" alt="${s.name}" class="w-20 h-20 mx-auto mb-3 group-hover:scale-110 transition">
+      <p class="font-medium text-sm">${s.name}</p>
+    `;
+    skillsGrid.appendChild(div);
+  });
+
+  const projectsGrid = document.getElementById('projectsGrid');
+  projects.forEach(p => {
+    const card = document.createElement('div');
+    card.className = 'project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden cursor-pointer relative group';
+
+    card.innerHTML = `
+      <div class="relative overflow-hidden">
+        <img src="${p.thumbnail}" alt="${p.title}" class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      </div>
+
+      <div class="p-6">
+        <h3 class="text-2xl font-bold mb-2">${p.title}</h3>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">${p.short}</p>
+        <div class="flex flex-wrap gap-2 mb-6">
+          ${p.tech.map(t => `<span class="px-4 py-1.5 text-xs rounded-full font-medium bg-sky-100 dark:bg-sky-900 text-sky-800 dark:text-sky-200">${t}</span>`).join('')}
         </div>
-      `;
-      projectsGrid.appendChild(card);
-    });
-  </script>
 
+        <!-- NEW View Details Button -->
+        <a href="project.html?id=${p.slug}" 
+           class="inline-flex items-center gap-2 bg-sky-600 hover:bg-sky-700 text-white font-semibold px-6 py-3 rounded-lg transition transform hover:scale-105 shadow-md">
+          <span>More Details</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 17l9.2-9.2M17 17V7H7"></path>
+          </svg>
+        </a>
+      </div>
+    `;
+
+    projectsGrid.appendChild(card);
+  });
+</script>
 
 <script src="data/other-projects.js"></script>
 <script>
