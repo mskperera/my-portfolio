@@ -40,7 +40,7 @@ const projects = [
     "Multi-user support for clinics",
     "Search and filter patients easily"
   ],
-  liveUrl: "#",
+  liveUrl: null,
   sourceUrl: null,
   thumbnail: "https://clpos.legendbyte.com/api/v1/asset/e74372a1d09910670ac0cb78b9b63ed5",
   screenshots: [
