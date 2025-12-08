@@ -14,13 +14,13 @@ const projects = [
   ],
   liveUrl: "https://clpos.legendbyte.com",
   sourceUrl: null,
-  thumbnail: "https://clpos.legendbyte.com/api/v1/asset/7163d9903cf4a7cff97f68c9f66c94b3",
+  thumbnail: "https://clpos.legendbyte.com/api/v1/asset/2e08ec6079dc35224a9a70af20869638",
   screenshots: [
-    { url: "https://clpos.legendbyte.com/api/v1/asset/7163d9903cf4a7cff97f68c9f66c94b3", caption: "POS view" },
-    { url: "https://clpos.legendbyte.com/api/v1/asset/f2004575174442dc7071100194dfdeb8", caption: "Dashboard Overview" },
-    { url: "https://clpos.legendbyte.com/api/v1/asset/558d18563dd37ea08da450e04a22b007", caption: "Inventory Management" },
-    { url: "https://clpos.legendbyte.com/api/v1/asset/353f43120cfc12618dc0fcaa87594ac3", caption: "Add/Edit Product Details" },
-    { url: "https://clpos.legendbyte.com/api/v1/asset/0ee1ab3084bd567164cf16cb4415e955", caption: "Desktop App Icon" }
+    { url: "https://clpos.legendbyte.com/api/v1/asset/2e08ec6079dc35224a9a70af20869638", caption: "POS view" },
+    { url: "https://clpos.legendbyte.com/api/v1/asset/2b8edb53755ad4ca855d35a3647e9260", caption: "Dashboard Overview" },
+    { url: "https://clpos.legendbyte.com/api/v1/asset/5ca9e35323c34efbc37a16f7d229101f", caption: "Inventory Management" },
+    { url: "https://clpos.legendbyte.com/api/v1/asset/e3ed12a9b837b89a9ce62b87ddca507a", caption: "Add/Edit Product Details" },
+    // { url: "https://clpos.legendbyte.com/api/v1/asset/0ee1ab3084bd567164cf16cb4415e955", caption: "Desktop App Icon" }
   ],
   tech: ["React.js", "Node.js", "Express", "Tailwind CSS", "MariaDB", "Tauri", "Socket.io"]
 }
@@ -42,13 +42,13 @@ const projects = [
   ],
   liveUrl: null,
   sourceUrl: null,
-  thumbnail: "https://clpos.legendbyte.com/api/v1/asset/e74372a1d09910670ac0cb78b9b63ed5",
+  thumbnail: "https://clpos.legendbyte.com/api/v1/asset/d30cfe107d7027e3b450666e1f193920",
   screenshots: [
-    { url: "https://clpos.legendbyte.com/api/v1/asset/e74372a1d09910670ac0cb78b9b63ed5", caption: "Login" },
-    { url: "https://clpos.legendbyte.com/api/v1/asset/20d0f78d9471945de422a974a5c0c1b1", caption: "Easy search" },
-    { url: "https://clpos.legendbyte.com/api/v1/asset/0053cc8e2d521521f21136f6b992b499", caption: "Patient records handling" },
-    { url: "https://clpos.legendbyte.com/api/v1/asset/29509dec4fbf170276c5f45038c811dd", caption: "New Patient" },
-    { url: "https://clpos.legendbyte.com/api/v1/asset/a6d3bfce9c360a6ced60f5bf2f022b9f", caption: "Manage Appointments" }
+    { url: "https://clpos.legendbyte.com/api/v1/asset/d30cfe107d7027e3b450666e1f193920", caption: "Login" },
+    { url: "https://clpos.legendbyte.com/api/v1/asset/1ca4f61e4ee52ae99b6d26d4721ad599", caption: "Easy search" },
+    { url: "https://clpos.legendbyte.com/api/v1/asset/032e7c573d447ac8fbd4fbce7336159f", caption: "Patient records handling" },
+    { url: "https://clpos.legendbyte.com/api/v1/asset/17020fded2f0b0507a261ac76559e652", caption: "New Patient" },
+    { url: "https://clpos.legendbyte.com/api/v1/asset/a41c2514b6e49885c09401a3ff52dc40", caption: "Manage Appointments" }
   ],
   tech: ["React.js", "Node.js", "Express", "Tailwind CSS", "MariaDB"]
 }
