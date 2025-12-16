@@ -5,7 +5,7 @@ const projects = [
   short: "Multi-tenant cloud POS with billing and inventory management (click “More Details” to experience the demo).",
   description: "Designed and developed a cloud-based Point of Sale system using a multi-tenancy architecture (single frontend and backend application with separate databases for each client). The system supports POS billing, receipt printing, product management, stock and batch handling, store management, and reporting. It can be used from both web and desktop applications. Ideal for businesses needing a centralized, scalable, and efficient way to manage operations from anywhere. (Live demo available: https://clpos.legendbyte.com  | username: demo1@gmail.com, password:1234)",
   features: [
-    "Multi-tenant architecture with separate databases per client",
+    "Secure and private data",
     "POS billing and receipt printing",
     "Product, stock, and batch management",
     "Store and user management with role-based access",
